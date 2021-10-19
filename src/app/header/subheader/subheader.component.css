@@ -1,0 +1,38 @@
+ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  max-width: 1500px;
+  margin: auto;
+}
+div {
+  display: flex;
+  flex-direction: column;
+}
+li {
+  font-family: 'Raleway', sans-serif;
+  display: inline-block;
+  margin: 20px;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F9FAFA;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+}
+nav {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+p {
+  width: 100%;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 1;
+  padding-top: 8px;
+}
