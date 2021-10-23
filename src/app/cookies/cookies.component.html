@@ -1,4 +1,4 @@
-<div class="cookies">
+<div *ngIf="visible" class="cookies">
   <header>
     <img src="https://ohmydev.pl/cookies_logo.svg" alt="logo">
     <p>
@@ -7,5 +7,5 @@
       Zapoznaj się z <a href="#">Polityką prywatności</a>
     </p>
   </header>
-  <button class="btn">Rozumiem</button>
+  <button class="btn" (click)="closeModal()">Rozumiem</button>
 </div>
