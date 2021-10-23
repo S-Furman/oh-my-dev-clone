@@ -10,6 +10,8 @@ import { ArticlesComponent } from './main/articles/articles.component';
 import { ArticleComponent } from './main/articles/article/article.component';
 import { ChipComponent } from './components/chip/chip.component';
 import { CookiesComponent } from './cookies/cookies.component';
+import {ChipsComponent} from "./main/articles/article/chips/chips.component";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { CookiesComponent } from './cookies/cookies.component';
     ArticlesComponent,
     ArticleComponent,
     ChipComponent,
-    CookiesComponent
+    CookiesComponent,
+    ChipsComponent
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

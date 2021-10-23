@@ -1,0 +1,31 @@
+article {
+  background-color: #fff;
+  display: flex;
+  padding: 24px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.thumbs-counter {
+  text-align: center;
+  font-size: 28px;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  padding: 0 20px;
+  position: relative;
+  top: 50px;
+}
+
+header {
+  color: #32383D;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+section {
+  margin-left: 24px;
+}
+.article-text {
+  color: #989C9E;
+  font-size: 16px;
+}
