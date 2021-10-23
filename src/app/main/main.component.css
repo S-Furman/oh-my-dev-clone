@@ -1,0 +1,33 @@
+main {
+  width: 50%;
+  margin: 0 300px;
+  padding-top: 40px;
+}
+.main-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+h2 {
+  margin: 0;
+}
+
+.btn {
+  background-color: white;
+  line-height: 25px;
+  padding: 11px;
+  font-size: 0.875rem;
+  border: 1px solid rgba(0, 0, 0, 0.12) ;
+  border-radius: 10px;
+  width: 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+span {
+  display: inherit;
+  align-items: inherit;
+}
+
