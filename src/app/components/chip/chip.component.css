@@ -1,0 +1,10 @@
+p {
+  background-color: #F9FAFA;
+  display: inline-block;
+  border-radius: 6px;
+  border: 1px solid #F9FAFA;
+  margin-right: 5px;
+  padding: 3px 8px 1px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 11px;
+}
