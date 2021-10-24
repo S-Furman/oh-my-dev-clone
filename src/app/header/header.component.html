@@ -1,13 +1,14 @@
 <header>
-  <figure>
-    <img src="https://ohmydev.pl/logo/logo.svg" alt="logo">
-  </figure>
-  <div style="position: relative">
-    <fa-icon class="search-icon" [icon]="faSearch"></fa-icon>
-    <input class="search" type="text" placeholder="Szukaj">
+  <a href="/">
+    <figure>
+      <img src="https://ohmydev.pl/logo/logo.svg" alt="logo">
+    </figure>
+  </a>
 
-    <button type="button" class="btn btn-login">Zaloguj się</button>
-    <button type="button" class="btn btn-signIn">Załóż konto</button>
+  <div style="position: relative; display: inline-flex">
+    <app-input [icon]="faSearch" placeholder="Szukaj"></app-input>
+    <app-anchor-black link="/login">Zaloguj się</app-anchor-black>
+    <app-anchor-pink link="/signIn">Załóż konto</app-anchor-pink>
   </div>
 
 </header>
