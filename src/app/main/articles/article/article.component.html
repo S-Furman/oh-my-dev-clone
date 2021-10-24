@@ -1,19 +1,17 @@
 <article>
   <div style="position: relative">
     <fa-icon style="position: absolute; left: 50%; transform: translate(-50%,0); top: 15px" [icon]="faCaretUp" [styles]="{'stroke': 'rgb(240, 60, 156)', 'color': '#FFEDF7'}" size="3x"></fa-icon>
-    <p class="thumbs-counter">{{number}}</p>
+    <p class="thumbs-counter">{{article.rating}}</p>
   </div>
-  <img style="width: 200px; height: 100px; border-radius: 10px; object-fit: cover " src="https://imgproxy.ohmydev.pl/11vFz530f-3WpUsw_aKA783XQct5pDFXRMhOXMMDryU/pr:post_main/plain/https://i.ytimg.com/vi/jX8wB7SuPs8/hqdefault.jpg" alt="sth">
+  <img style="width: 200px; height: 100px; border-radius: 10px; object-fit: cover " src="{{article.img}}" alt="sth">
   <section>
-    <header>Jak zmienić nazwy commitow w gicie? git rebase i commit amend</header>
-    <app-chips [chips]="tags"></app-chips>
+    <header>{{article.title}}</header>
+    <app-chips [chips]="article.tags"></app-chips>
     <p style="display: inline-block">W społeczności</p>
     <fa-icon [icon]="faCaretUp"></fa-icon>
     <app-chip chip="IT News"></app-chip>
     <p class="article-text">
-      Co zrobić gdy zrobiliśmy commit i wypuściliśmy kod na lokalne repo ale okazało się, że opis jest niepoprawny lub brakuje pliku?
-      ✓ git commit --amend - pozwala zmodyfikować aktualny commit w repozytorium projektu
-      ✓ git rebase - pozwala zmodyfikować wiele wcześniejszych commitów za jednym razem
+      {{article.content}}
     </p>
   </section>
 </article>

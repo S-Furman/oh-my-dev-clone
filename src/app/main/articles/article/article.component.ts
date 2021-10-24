@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {faCaretUp} from "@fortawesome/free-solid-svg-icons";
+import {Article} from "../article.interface";
 
 @Component({
   selector: 'app-article',
@@ -7,12 +8,12 @@ import {faCaretUp} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
-  number = 0;
-  tags = ['git', 'github', 'programowanie'];
   faCaretUp = faCaretUp;
+  @Input() article! : Article;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.article)
   }
 
 }

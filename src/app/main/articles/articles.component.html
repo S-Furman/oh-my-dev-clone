@@ -1,6 +1,6 @@
 <section>
   <button (click)="addArticle()">Dodaj</button>
-  <app-article *ngFor="let article of articles"></app-article>
+  <app-article *ngFor="let article of articles" [article]="article"></app-article>
 </section>
 
 
