@@ -1,0 +1,22 @@
+input {
+  background-color: #F9FAFA;
+  border: 1px solid #EFEFEF;
+  border-radius: 15px;
+  min-height: 56px;
+  padding-left: 50px;
+  font-size: 18px;
+  transition: width .2s;
+  width: 100%;
+}
+input:hover {
+  border-color: #989C9E;
+}
+input:focus {
+  width: 400px;
+}
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  transform: translate(0, -50%);
+}
