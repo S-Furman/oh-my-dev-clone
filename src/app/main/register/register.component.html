@@ -1,0 +1,43 @@
+<main style="max-width: 1368px">
+  <div style="width: 40%; margin-right: 10%">
+    <header>
+      <h2 class="header">Załóż konto</h2>
+    </header>
+    <div>
+      <form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)" >
+        <div class="input-container">
+<!--          <app-input style="margin: 40px 0" placeholder="Twój e-mail" type="text"></app-input>-->
+          <input type="email" name="email" ngModel required >
+          <input type="password" name="password" ngModel required >
+        </div>
+        <div class="input-container">
+<!--          <app-input style="margin: 40px 0" placeholder="Twoja nazwa użytkownika" type="text"></app-input>-->
+        </div>
+        <div class="input-container">
+<!--          <app-input [icon]="faEyeSlash" [alignIconRight]="true" placeholder="Hasło" type="text"></app-input>-->
+        </div>
+        <div class="input-container">
+          <app-checkbox name="confirmation-checkbox" (checkEvent)="checkboxHandler($event)">
+            Oświadczam, że zapoznałem/am się z
+            <span class="pink-color">Regulaminem Serwisu</span> i
+            <span class="pink-color">Polityką Prywatności</span>
+            oraz akceptuję ich treść.
+          </app-checkbox>
+        </div>
+        <app-button-pink [disabled]="!signUpForm.valid || !isCheckboxChecked" type="submit">Załóż konto</app-button-pink>
+      </form>
+      <div style="margin: 24px 0">
+        <p class="already-singedIn" style="text-align: center; color: #989C9E; font-size: 16px">Masz już konto? <span class="pink-color">Zaloguj się</span></p>
+      </div>
+
+    </div>
+
+  </div>
+  <div style="display: flex; justify-content: end; flex: 1 1 auto">
+    <div style="flex: 0 1 70%">
+      <h2>Nie masz konta?</h2>
+      <p class="sign-in">Zarejestruj się. Zajmie ci to mniej niż minutę.</p>
+      <app-button-pink>Załóż konto</app-button-pink>
+    </div>
+  </div>
+</main>
