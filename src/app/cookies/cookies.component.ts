@@ -1,16 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cookies',
   templateUrl: './cookies.component.html',
-  styleUrls: ['./cookies.component.css']
+  styleUrls: ['./cookies.component.scss']
 })
-export class CookiesComponent implements OnInit {
+export class CookiesComponent {
   visible = true;
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   closeModal() {
     this.visible = false;
