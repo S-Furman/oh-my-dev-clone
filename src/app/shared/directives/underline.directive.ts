@@ -7,10 +7,10 @@ export class UnderlineDirective {
 
   constructor(private el: ElementRef) {}
 
-  @HostListener('mouseenter') onMouseOver() {
+  @HostListener('mouseenter') public onMouseOver() {
     this.el.nativeElement.style.textDecoration = 'underline';
   }
-  @HostListener('mouseleave') onMouseLeave() {
+  @HostListener('mouseleave') public onMouseLeave() {
     this.el.nativeElement.style.textDecoration = 'none';
   }
 
