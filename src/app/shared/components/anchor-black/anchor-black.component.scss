@@ -7,21 +7,16 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-}
-.btn-login {
   background-color: transparent;
   border: none;
   font-weight: 600;
-}
-.btn-login:hover {
-  color: #F03C9C;
+  width: 100%;
 }
 a {
   text-decoration: none;
   color: inherit;
 }
-
-.btn-label {
+span {
   display: inherit;
   align-items: inherit;
   justify-content: inherit;
