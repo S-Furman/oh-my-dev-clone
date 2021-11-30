@@ -1,0 +1,54 @@
+$mobile: 640px;
+$tablet: 768px;
+$desktop: 1024px;
+
+header {
+  background-color: white;
+  display: flex;
+  max-width: 1330px;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 104px;
+
+ @media only screen and (max-width: 1440px) {
+   max-width: 1000px;
+ }
+}
+
+fa-icon {
+ color: #444444;
+  margin: 20px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.icon-with-bg {
+  padding: 10px;
+  background-color: #F9FAFA;
+  border-radius: 15px;
+  border: 1px solid rgba(0,0,0,0.12);
+}
+
+.nav-actions-small-screen {
+  display: none;
+  position: relative;
+
+  @media screen and (max-width: $desktop) {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+.nav-actions-desktop-screen {
+  position: relative;
+  display: inline-flex;
+
+  @media screen and (max-width: $desktop) {
+    display: none;
+  }
+}
+.invisible {
+  display: none;
+}
+

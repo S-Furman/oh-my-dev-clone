@@ -1,16 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import { Component } from '@angular/core';
+import { faSearch, faBars, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
-  faSearch = faSearch;
+export class HeaderComponent {
+  public faSearch: IconDefinition = faSearch;
+  public faBars: IconDefinition = faBars;
+  public isSearchVisible: boolean = false;
+  public sideBarVisible: boolean = false;
   constructor() { }
-
-  ngOnInit(): void {
+  public expandSearch() {
+    this.isSearchVisible = true;
   }
-
+  public toggleSideMenu() {
+    this.sideBarVisible = !this.sideBarVisible;
+  }
+  public hideModal() {
+    this.sideBarVisible = false;
+  }
 }

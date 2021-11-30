@@ -1,3 +1,4 @@
+<app-sidebar *ngIf="sideBarVisible" (closeModal)="hideModal()"></app-sidebar>
 <header>
   <a href="/">
     <figure>
@@ -5,10 +6,27 @@
     </figure>
   </a>
 
-  <div style="position: relative; display: inline-flex">
+  <div class="nav-actions-desktop-screen">
     <app-input [icon]="faSearch" placeholder="Szukaj"></app-input>
-    <app-anchor-black link="/login">Zaloguj się</app-anchor-black>
-    <app-anchor-pink link="/signIn">Załóż konto</app-anchor-pink>
+    <app-anchor-black style="margin-left: 32px" appPinkHover link="/login">Zaloguj się</app-anchor-black>
+    <app-anchor-pink style="margin-left: 32px" link="/register">Załóż konto</app-anchor-pink>
+  </div>
+  <div class="nav-actions-small-screen">
+    <fa-icon
+      [icon]="faSearch"
+      size="2x"
+      class="icon-with-bg"
+      [ngClass]="{'invisible': isSearchVisible}"
+      (click)="expandSearch()"
+      appPinkHover>
+    </fa-icon>
+    <app-input
+      [icon]="faSearch"
+      placeholder="Szukaj"
+      [ngClass]="{'invisible': !isSearchVisible}"
+    >
+    </app-input>
+    <fa-icon [icon]="faBars" size="2x" appPinkHover (click)="toggleSideMenu()"></fa-icon>
   </div>
 
 </header>
