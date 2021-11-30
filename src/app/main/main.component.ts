@@ -1,17 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import {faFire, faLeaf} from "@fortawesome/free-solid-svg-icons";
+import { Component } from '@angular/core';
+import { faFire, faLeaf, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit {
-  faFire = faFire;
-  faLeaf = faLeaf;
+export class MainComponent {
+  public faFire: IconDefinition = faFire;
+  public faLeaf: IconDefinition = faLeaf;
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
