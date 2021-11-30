@@ -7,6 +7,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .btn-signIn{
   background-color: #F03C9C;
@@ -15,7 +16,6 @@
   border-radius: 5px;
   min-width: 230px;
   font-weight: 500;
-  margin-left: 32px;
   box-shadow: 0 10px 30px #f03c9c33;
 }
 .btn-signIn:hover {
