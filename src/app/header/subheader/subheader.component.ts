@@ -1,16 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import {faHeart} from "@fortawesome/free-solid-svg-icons";
+import { Component } from '@angular/core';
+import { faHeart, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-subheader',
   templateUrl: './subheader.component.html',
-  styleUrls: ['./subheader.component.css']
+  styleUrls: ['./subheader.component.scss']
 })
-export class SubheaderComponent implements OnInit {
-  faHeart = faHeart
+export class SubheaderComponent {
+  public faHeart: IconDefinition = faHeart;
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
