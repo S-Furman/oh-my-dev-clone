@@ -1,0 +1,8 @@
+<app-backdrop (closeModal)="hideModal()"></app-backdrop>
+<div class="modal" @openClose>
+  <nav>
+    <app-anchor-black (click)="hideModal()" appPinkHover link="/login">Zaloguj się</app-anchor-black>
+    <app-anchor-pink (click)="hideModal()" link="/register">Załóż konto</app-anchor-pink>
+    <p>Zarejestruj się, zajmie Ci to mniej niż minutę!</p>
+  </nav>
+</div>
