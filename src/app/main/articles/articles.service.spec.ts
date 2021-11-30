@@ -1,23 +1,7 @@
-// import { TestBed } from '@angular/core/testing';
-//
-// import { ArticlesService } from './articles.service';
-//
-// describe('ArticlesService', () => {
-//   let service: ArticlesService;
-//
-//   beforeEach(() => {
-//     TestBed.configureTestingModule({});
-//     service = TestBed.inject(ArticlesService);
-//   });
-//
-//   it('should be created', () => {
-//     expect(service).toBeTruthy();
-//   });
-// });
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
 
-import { ArticlesService } from "./articles.service";
-import { TestBed } from "@angular/core/testing";
-import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
+import { ArticlesService } from './articles.service';
 
 describe('Articles service', () => {
   let service: ArticlesService;
@@ -26,7 +10,7 @@ describe('Articles service', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-    })
+    });
     service = TestBed.inject(ArticlesService);
     httpTestingController = TestBed.inject(HttpTestingController);
   });
@@ -36,21 +20,21 @@ describe('Articles service', () => {
   });
 
   const resMockData = {
-    'key1': {
+    key1: {
       title: 'title1',
       content: 'content1',
       img: 'img1',
       rating: 1,
       tags: ['1', '2'],
     },
-    'key2': {
+    key2: {
       title: 'title1',
       content: 'content1',
       img: 'img1',
       rating: 1,
       tags: ['1', '2'],
     }
-  }
+  };
   const mockData = [
     {
       key: 'key1',
@@ -68,7 +52,7 @@ describe('Articles service', () => {
       rating: 1,
       tags: ['1', '2'],
     }
-  ]
+  ];
 
   it ('should retrieve posts from BE via GET', () => {
     service.fetchArticles().subscribe(posts => {
@@ -78,9 +62,9 @@ describe('Articles service', () => {
     const mockReq = httpTestingController.expectOne('https://ohmydevtest-default-rtdb.firebaseio.com/posts.json');
     expect(mockReq.request.method).toBe('GET');
     mockReq.flush(resMockData);
-  })
+  });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
-  })
-})
+  });
+});
