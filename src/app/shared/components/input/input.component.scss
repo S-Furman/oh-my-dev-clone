@@ -8,6 +8,12 @@ input {
   transition: width .2s;
   width: 100%;
 }
+.icon-right {
+  right: 3%;
+}
+.icon-left {
+  left: 3%;
+}
 input:hover {
   border-color: #989C9E;
 }
@@ -17,6 +23,5 @@ input:focus {
 .input-icon {
   position: absolute;
   top: 50%;
-  left: 3%;
   transform: translate(0, -50%);
 }
