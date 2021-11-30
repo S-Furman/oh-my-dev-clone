@@ -1,10 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ArticlesComponent } from './articles.component';
+import createSpyObj = jasmine.createSpyObj;
+import { of } from "rxjs";
 
 describe('ArticlesComponent', () => {
   let component: ArticlesComponent;
   let fixture: ComponentFixture<ArticlesComponent>;
+
+
+  const spy = createSpyObj('ArticleService', ['fetchArticles']);
+  spy.fetchArticles.and.returnValue(of('o kurwa'));
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -19,7 +25,7 @@ describe('ArticlesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
   });
 });
