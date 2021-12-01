@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { faHeart, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { Chip } from '../../components/chip/chip.interface';
+import { SUBHEADER_MODEL } from './subheader.model';
+
 
 @Component({
   selector: 'app-subheader',
@@ -7,6 +9,6 @@ import { faHeart, IconDefinition } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./subheader.component.scss']
 })
 export class SubheaderComponent {
-  public faHeart: IconDefinition = faHeart;
+  public chips: Chip[]  = SUBHEADER_MODEL;
   constructor() { }
 }
