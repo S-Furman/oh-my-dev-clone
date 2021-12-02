@@ -1,20 +1,21 @@
-$mobile: 640px;
-$tablet: 768px;
-$desktop: 1024px;
+@use '/src/app/sass/breakpoints';
 
 header {
   background-color: white;
   display: flex;
-  max-width: 1330px;
+  width: 60%;
   justify-content: space-between;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
   height: 104px;
 
- @media only screen and (max-width: 1440px) {
-   max-width: 1000px;
+ @media screen and (max-width: breakpoints.$desktop) {
+   width: 95%;
  }
+}
+.header-container {
+  background-color: white;
 }
 
 fa-icon {
@@ -35,7 +36,7 @@ fa-icon {
   display: none;
   position: relative;
 
-  @media screen and (max-width: $desktop) {
+  @media screen and (max-width: breakpoints.$tablet) {
     display: inline-flex;
     align-items: center;
   }
@@ -44,7 +45,7 @@ fa-icon {
   position: relative;
   display: inline-flex;
 
-  @media screen and (max-width: $desktop) {
+  @media screen and (max-width: breakpoints.$tablet) {
     display: none;
   }
 }

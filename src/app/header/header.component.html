@@ -1,34 +1,38 @@
 <app-sidebar *ngIf="sideBarVisible" (closeModal)="hideModal()"></app-sidebar>
-<header>
-  <a href="/">
-    <figure>
-      <img src="https://ohmydev.pl/logo/logo.svg" alt="logo">
-    </figure>
-  </a>
+<div class="header-container">
+  <header>
+   <a href="/">
+      <picture>
+        <source media="(max-width: 768px)" srcset="/assets/logo_mobile.svg">
+        <source media="(min-width: 769px)" srcset="/assets/logo.svg">
+        <img src="https://ohmydev.pl/logo/logo.svg" alt="logo">
+      </picture>
 
-  <div class="nav-actions-desktop-screen">
-    <app-input [icon]="faSearch" placeholder="Szukaj"></app-input>
-    <app-anchor-black style="margin-left: 32px" appPinkHover link="/login">Zaloguj się</app-anchor-black>
-    <app-anchor-pink style="margin-left: 32px" link="/register">Załóż konto</app-anchor-pink>
-  </div>
-  <div class="nav-actions-small-screen">
-    <fa-icon
-      [icon]="faSearch"
-      size="2x"
-      class="icon-with-bg"
-      [ngClass]="{'invisible': isSearchVisible}"
-      (click)="expandSearch()"
-      appPinkHover>
-    </fa-icon>
-    <app-input
-      [icon]="faSearch"
-      placeholder="Szukaj"
-      [ngClass]="{'invisible': !isSearchVisible}"
-    >
-    </app-input>
-    <fa-icon [icon]="faBars" size="2x" appPinkHover (click)="toggleSideMenu()"></fa-icon>
-  </div>
+    </a>
 
-</header>
+    <div class="nav-actions-desktop-screen">
+      <app-input [icon]="faSearch" placeholder="Szukaj"></app-input>
+      <app-anchor-black style="margin-left: 32px" appPinkHover link="/login">Zaloguj się</app-anchor-black>
+      <app-anchor-pink style="margin-left: 32px" link="/register">Załóż konto</app-anchor-pink>
+    </div>
+    <div class="nav-actions-small-screen">
+      <fa-icon
+        [icon]="faSearch"
+        size="2x"
+        class="icon-with-bg"
+        [ngClass]="{'invisible': isSearchVisible}"
+        (click)="expandSearch()"
+        appPinkHover>
+      </fa-icon>
+      <app-input
+        [icon]="faSearch"
+        placeholder="Szukaj"
+        [ngClass]="{'invisible': !isSearchVisible}"
+      >
+      </app-input>
+      <fa-icon [icon]="faBars" size="2x" appPinkHover (click)="toggleSideMenu()"></fa-icon>
+    </div>
+  </header>
+</div>
 <hr>
 <app-subheader></app-subheader>
