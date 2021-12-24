@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 
 import { ArticlesComponent } from './articles.component';
 import createSpyObj = jasmine.createSpyObj;
-import { of } from "rxjs";
+
 
 describe('ArticlesComponent', () => {
   let component: ArticlesComponent;
@@ -15,8 +16,7 @@ describe('ArticlesComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ArticlesComponent ]
-    })
-    .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -6,6 +6,6 @@ import {Component, Input } from '@angular/core';
   styleUrls: ['./anchor-black.component.scss']
 })
 export class AnchorBlackComponent {
-  @Input() link!: string;
+  @Input() public link!: string;
   constructor() { }
 }

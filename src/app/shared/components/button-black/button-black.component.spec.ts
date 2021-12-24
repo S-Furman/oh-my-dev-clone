@@ -9,8 +9,7 @@ describe('ButtonBlackComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ButtonBlackComponent ]
-    })
-    .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

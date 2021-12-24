@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./cookies.component.scss']
 })
 export class CookiesComponent {
-  visible = true;
+  public visible: boolean = true;
   constructor() { }
 
-  closeModal() {
+  public closeModal() {
     this.visible = false;
   }
 

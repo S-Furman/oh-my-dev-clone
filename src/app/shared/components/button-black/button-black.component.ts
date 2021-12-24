@@ -6,6 +6,6 @@ import {Component, Input } from '@angular/core';
   styleUrls: ['./button-black.component.scss']
 })
 export class ButtonBlackComponent {
-  @Input() type?: string = 'button';
+  @Input() public type?: string = 'button';
   constructor() { }
 }

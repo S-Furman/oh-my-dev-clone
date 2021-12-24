@@ -7,10 +7,10 @@ export class PinkHoverDirective {
 
   constructor(private el: ElementRef) { }
 
-  @HostListener('mouseenter') onMouseEnter(): void {
+  @HostListener('mouseenter') public onMouseEnter(): void {
     this.el.nativeElement.style.color = '#F03C9C';
   }
-  @HostListener('mouseleave') onMouseLeave() {
+  @HostListener('mouseleave') public onMouseLeave() {
     this.el.nativeElement.style.color = 'inherit';
   }
 

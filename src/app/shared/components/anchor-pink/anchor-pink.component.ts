@@ -6,7 +6,7 @@ import {Component, Input } from '@angular/core';
   styleUrls: ['./anchor-pink.component.scss']
 })
 export class AnchorPinkComponent {
-  @Input() link!: string;
+  @Input() public link!: string;
   constructor() { }
 
 }

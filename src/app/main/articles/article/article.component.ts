@@ -1,6 +1,6 @@
 import {Component, Input } from '@angular/core';
-import {faCaretUp} from "@fortawesome/free-solid-svg-icons";
-import {Article} from "../article.interface";
+import { faCaretUp, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import {Article} from '../article.interface';
 
 @Component({
   selector: 'app-article',
@@ -8,7 +8,7 @@ import {Article} from "../article.interface";
   styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent {
-  faCaretUp = faCaretUp;
-  @Input() article! : Article;
+  @Input() public article!: Article;
+  public faCaretUp: IconDefinition = faCaretUp;
   constructor() { }
 }

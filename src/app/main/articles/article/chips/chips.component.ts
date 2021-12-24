@@ -6,7 +6,7 @@ import {Component, Input } from '@angular/core';
   styleUrls: ['./chips.component.scss']
 })
 export class ChipsComponent {
-  @Input() chips?: string[];
+  @Input() public chips?: string[];
   constructor() { }
 
 }
