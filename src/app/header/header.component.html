@@ -12,8 +12,9 @@
 
     <div class="nav-actions-desktop-screen">
       <app-input [icon]="faSearch" placeholder="Szukaj"></app-input>
-      <app-anchor-black style="margin-left: 32px" appPinkHover link="/login">Zaloguj się</app-anchor-black>
-      <app-anchor-pink style="margin-left: 32px" link="/register">Załóż konto</app-anchor-pink>
+      <app-anchor-black style="margin-left: 32px" appPinkHover link="/login" *ngIf="!isAuth">Zaloguj się</app-anchor-black>
+      <app-anchor-pink style="margin-left: 32px" link="/register" *ngIf="!isAuth">Załóż konto</app-anchor-pink>
+      <app-anchor-pink style="margin-left: 32px" link="/register" *ngIf="isAuth">Wyloguj</app-anchor-pink>
     </div>
     <div class="nav-actions-small-screen">
       <fa-icon

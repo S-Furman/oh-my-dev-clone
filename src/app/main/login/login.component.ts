@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { faEyeSlash, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { faEyeSlash, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -10,13 +13,21 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
   public isFormValid: boolean = false;
+  public isLogin: boolean = false;
   public faEyeSlash: IconDefinition = faEyeSlash;
-  constructor(private authService: AuthService) { }
+  public error: string | null  = null;
+  constructor(private authService: AuthService, private router: Router) { }
   public onSubmit(form: NgForm) {
+    this.isLogin = true;
     const email = form.value.email;
     const password = form.value.password;
-    this.authService.authUser('signIn', {email, password});
+    this.authService.authUser('signIn', {email, password}).subscribe(() => {
+      this.isLogin = false;
+      this.router.navigate(['/']);
+    }, error => {
+      this.isLogin = false;
+      this.error = error;
+    });
     form.reset();
   }
-
 }

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+import { User } from './User.model';
 
 interface SignUpResponseData {
   idToken: string;
@@ -18,16 +20,28 @@ interface SignInResponseData extends SignUpResponseData{
 })
 
 export class AuthService {
-  constructor(private http: HttpClient) {
-  }
+  public user: BehaviorSubject<User | null> = new BehaviorSubject<User|null>(null);
+  constructor(private http: HttpClient) {}
 
+  private static errorHandler(errorRes: HttpErrorResponse) {
+    switch(errorRes.error.error.message) {
+      case 'INVALID_EMAIL':
+        return throwError('Wpisz prawidłowy adres');
+      case 'INVALID_PASSWORD':
+        return throwError('Wpisz prawidłowe hasło');
+      case 'EMAIL_NOT_FOUND':
+        return throwError('Wpisz prawidłowe hasło');
+      case 'USER_DISABLED':
+        return throwError('Twoje konto zostało zablokowane');
+      default:
+        return throwError('Unkown error');
+    }
+  }
   public authUser(reqType: string, user: { email: string; password: string }) {
     if (reqType === 'signIn') {
-      // eslint-disable-next-line no-console
-      this.logIn(user).subscribe(data => console.log(data));
+      return this.logIn(user);
     } else {
-      // eslint-disable-next-line no-console
-      this.singUp(user).subscribe(data => console.log(data));
+      return this.singUp(user);
     }
   }
 
@@ -37,7 +51,10 @@ export class AuthService {
       email: user.email,
       password: user.password,
       returnSecureToken: true,
-    });
+    }).pipe(
+      catchError((errorRes: HttpErrorResponse) => AuthService.errorHandler(errorRes)),
+      tap(resData => this.handleAuth(resData.email, resData.localId, resData.idToken, resData.expiresIn))
+    );
   }
 
   private logIn(user: { email: string; password: string }): Observable<SignInResponseData> {
@@ -46,6 +63,14 @@ export class AuthService {
       email: user.email,
       password: user.password,
       returnSecureToken: true,
-    });
+    }).pipe(
+      catchError((errorRes: HttpErrorResponse) => AuthService.errorHandler(errorRes)),
+      tap(resData => this.handleAuth(resData.email, resData.localId, resData.idToken, resData.expiresIn))
+    );
+  }
+  private handleAuth(email: string, id: string, tokenId: string, expiresIn: string) {
+    const expirationDate = new Date(new Date().getTime() + parseInt(expiresIn, 10)) ;
+    const newUser = new User(email, id, tokenId, expirationDate);
+    this.user.next(newUser);
   }
 }

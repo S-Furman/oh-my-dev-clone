@@ -15,7 +15,6 @@ import { ArticleComponent } from './main/articles/article/article.component';
 import { ChipComponent } from './components/chip/chip.component';
 import { CookiesComponent } from './cookies/cookies.component';
 import {ChipsComponent} from './main/articles/article/chips/chips.component';
-
 import { LoginComponent } from './main/login/login.component';
 import { ButtonPinkComponent } from './shared/components/button-pink/button-pink.component';
 import { AnchorPinkComponent } from './shared/components/anchor-pink/anchor-pink.component';
@@ -28,6 +27,11 @@ import { RegisterComponent } from './main/register/register.component';
 import { CheckboxComponent } from './shared/components/checkbox/checkbox.component';
 import { SidebarComponent } from './header/sidebar/sidebar.component';
 import { BackdropComponent } from './shared/components/backdrop/backdrop.component';
+import { LatestCommentsComponent } from './main/sub-menu/latest-comments/latest-comments.component';
+import { SubMenuComponent } from './main/sub-menu/sub-menu.component';
+import { CommunitiesComponent } from './main/sub-menu/communities/communities.component';
+import { SavedArticlesComponent } from './main/sub-menu/saved-articles/saved-articles.component';
+import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -59,6 +63,11 @@ const routes: Routes = [
     SidebarComponent,
     SidebarComponent,
     BackdropComponent,
+    LatestCommentsComponent,
+    SubMenuComponent,
+    CommunitiesComponent,
+    SavedArticlesComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,7 @@ export class RegisterComponent {
   public onSubmit(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
-    this.authService.authUser('signUp', {email, password});
+    this.authService.authUser('signUp', {email, password}).subscribe();
   }
   public checkboxHandler(event: boolean) {
     this.isCheckboxChecked = event;

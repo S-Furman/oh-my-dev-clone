@@ -1,3 +1,6 @@
+<div *ngIf="isLogin" style="position: absolute; top: 50%; right: 50%;">
+  <app-spinner></app-spinner>
+</div>
 <main style="max-width: 1368px">
   <div style="width: 40%; margin-right: 10%">
     <header>
@@ -6,6 +9,7 @@
     <div>
       <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
         <div class="input-container">
+          <p style="color: red; font-size: 32px;">{{error}}</p>
 <!--          <app-input style="margin: 40px 0" placeholder="Twój e-mail" type="text" [ngModel] [required]="true" name="email"></app-input>-->
           <input type="email" name="email" ngModel required>
           <input type="password" name="password" ngModel required>
